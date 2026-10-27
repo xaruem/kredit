@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Imtiyozli kredit — yillik 11%</title>
+<style>
+:root{--red:#b81d16;--red2:#d4381f;--gold:#f6b434;--ink:#1c1b1a;--mute:#6d6762;--bg:#fbf0eb;--card:#fff;--line:#f0e3dc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#f5ece8;--mute:#b3a8a2;--bg:#1a1413;--card:#241c1a;--line:#3a2d29}}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0)}
+.wrap{max-width:600px;margin:0 auto;background:var(--card);min-height:100vh;overflow:hidden}
+.hero{position:relative;padding:28px 24px 32px;background:linear-gradient(180deg,#fff7f3,var(--card));overflow:hidden}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero{background:linear-gradient(180deg,#2c1f1c,var(--card))}}
+.hero::before{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;border-radius:50%;background:#f7e1db;opacity:.7}
+.top{position:relative;display:flex;justify-content:space-between;align-items:flex-start}
+.pill{background:var(--red);color:#fff;font-weight:800;font-size:16px;padding:14px 18px;border-radius:30px}
+.flag{width:82px;height:50px;border-radius:10px;overflow:hidden;box-shadow:0 4px 10px #0002;background:linear-gradient(#1eb5e8 0 33%,#ce1126 33% 36%,#fff 36% 64%,#ce1126 64% 67%,#1fa24a 67%)}
+h1{position:relative;font-size:clamp(60px,18vw,92px);line-height:1;font-weight:900;color:var(--red);letter-spacing:-3px;margin-top:22px}
+.sub{position:relative;font-size:clamp(22px,6.2vw,30px);font-weight:800;line-height:1.2;max-width:62%;margin-top:14px}
+.stats{position:relative;display:flex;align-items:center;gap:12px;margin-top:22px;width:62%}
+.box{border:2px solid var(--line);background:var(--card);border-radius:20px;padding:14px 16px;flex:1}
+.box small{display:block;font-size:12px;font-weight:700;color:var(--mute);text-transform:uppercase}
+.box b{display:block;font-size:clamp(26px,8vw,38px);line-height:1.05;color:var(--red);margin-top:6px}
+.dan{font-weight:700;color:var(--mute);font-size:16px}
+.rate{position:absolute;right:20px;top:128px;width:clamp(110px,31%,150px);aspect-ratio:1;background:linear-gradient(145deg,var(--red2),var(--red));color:#fff;border-radius:30px;transform:rotate(-6deg);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 12px 24px #b81d1640;z-index:2}
+.rate span{font-size:12px;font-weight:800}
+.rate b{font-size:clamp(38px,11vw,54px);font-weight:900}
+.bank{position:absolute;right:18px;top:250px;width:clamp(120px,36%,170px)}
+.cta{display:flex;align-items:center;gap:16px;margin-top:26px;position:relative;background:linear-gradient(90deg,var(--red2),var(--red));color:#fff;text-decoration:none;font-weight:900;font-size:clamp(19px,5.3vw,26px);padding:13px 18px;border-radius:30px;box-shadow:0 14px 26px #b81d1633;transition:transform .15s}
+.cta:active{transform:scale(.98)}
+.cta i{flex:none;width:50px;height:50px;border-radius:50%;background:var(--gold);display:grid;place-items:center}
+.cta i svg{width:24px;fill:var(--red)}
+.cta span{flex:1;text-align:center;padding-right:30px}
+section{padding:30px 24px;border-top:2px solid var(--line)}
+h2{font-size:clamp(26px,7vw,34px);font-weight:900;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{border:2px solid var(--line);border-radius:22px;padding:18px 14px;display:flex;gap:12px;align-items:center}
+.ic{flex:none;width:52px;height:52px;border-radius:16px;background:#fdf0dc;color:var(--red);display:grid;place-items:center;font-size:26px;font-weight:900}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ic{background:#3a2a1c}}
+.card b{display:block;font-size:17px;line-height:1.2}
+.card p{font-size:14px;color:var(--mute);margin-top:4px;line-height:1.3}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.step{border:2px solid var(--line);border-radius:22px;padding:16px 8px;text-align:center}
+.step em{font-style:normal;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;font-size:20px;margin:0 auto 12px}
+.step b{display:block;font-size:16px;line-height:1.2}
+.step p{font-size:13px;color:var(--mute);margin-top:6px;line-height:1.3}
+.calc{background:#fff7f3;border:2px solid var(--line);border-radius:24px;padding:20px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .calc{background:#2c1f1c}}
+.row{display:flex;justify-content:space-between;font-weight:700;margin:14px 0 6px}
+.row b{color:var(--red)}
+input[type=range]{width:100%;accent-color:var(--red)}
+.res{margin-top:18px;background:var(--red);color:#fff;border-radius:18px;padding:16px;display:flex;justify-content:space-between;gap:10px}
+.res small{display:block;opacity:.85;font-size:12px}
+.res b{font-size:20px}
+.note{font-size:12px;color:var(--mute);margin-top:10px}
+ul.req{padding:0;list-style:none;display:grid;gap:10px}
+ul.req li{display:flex;gap:12px;align-items:center;font-weight:600}
+ul.req li::before{content:"✓";flex:none;width:28px;height:28px;border-radius:50%;background:#fdf0dc;color:var(--red);display:grid;place-items:center;font-weight:900}
+details{border:2px solid var(--line);border-radius:18px;padding:16px 18px;margin-bottom:10px}
+summary{font-weight:800;cursor:pointer;list-style:none;display:flex;justify-content:space-between}
+summary::after{content:"+";color:var(--red);font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:var(--mute);line-height:1.45;font-size:15px}
+footer{padding:26px 24px 110px;text-align:center;color:var(--mute);font-size:13px;border-top:2px solid var(--line)}
+.fab{position:fixed;right:max(16px,calc(50% - 284px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:9;display:flex;align-items:center;gap:8px;background:#229ed9;color:#fff;text-decoration:none;font-weight:800;padding:14px 18px;border-radius:30px;box-shadow:0 8px 20px #0004}
+.fab svg{width:22px;fill:#fff}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+@keyframes up{from{opacity:0;transform:translateY(22px)}}
+@keyframes pop{0%{opacity:0;transform:rotate(-20deg) scale(.4)}70%{transform:rotate(-3deg) scale(1.08)}100%{opacity:1;transform:rotate(-6deg) scale(1)}}
+@keyframes bob{50%{transform:translateY(-3px) rotate(-3deg)}}
+@keyframes floaty{50%{transform:translateY(-8px)}}
+@keyframes shine{0%,60%{transform:translateX(-120%) skewX(-20deg)}100%{transform:translateX(320%) skewX(-20deg)}}
+@keyframes ring{0%{box-shadow:0 8px 20px #0004,0 0 0 0 #229ed9aa}100%{box-shadow:0 8px 20px #0004,0 0 0 18px #229ed900}}
+@keyframes nudge{50%{transform:translateX(4px)}}
+.cta{overflow:hidden}
+.cta::after{content:"";position:absolute;top:0;bottom:0;left:0;width:30%;background:linear-gradient(90deg,transparent,#fff5,transparent)}
+.cta i svg{animation:nudge 1.4s ease-in-out infinite}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:no-preference){
+.pill{animation:up .6s .05s backwards}
+.flag{animation:up .6s .15s backwards}
+h1{animation:up .7s .2s backwards}
+.sub{animation:up .7s .35s backwards}
+.stats{animation:up .7s .5s backwards}
+.hero .cta{animation:up .7s .8s backwards}
+.rate{animation:pop .8s .6s cubic-bezier(.2,.9,.3,1.2) backwards,bob 4s 1.5s ease-in-out infinite}
+.bank{animation:up .8s .7s backwards,floaty 5s 1.5s ease-in-out infinite}
+.cta::after{animation:shine 3.5s 1.5s infinite}
+.fab{animation:ring 2.2s infinite}
+}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+@media(max-width:420px){.grid{grid-template-columns:1fr}.stats{width:60%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hero">
+  <div class="top"><div class="pill">IMTIYOZLI KREDIT</div><div class="flag" role="img" aria-label="O‘zbekiston bayrog‘i"></div></div>
+  <h1>KREDIT!</h1>
+  <p class="sub">Orzularingiz sari ishonchli qadam</p>
+  <div class="rate"><span>YILLIK STAVKA</span><b>11%</b></div>
+  <svg class="bank" viewBox="0 0 170 150" aria-hidden="true"><polygon points="0,38 85,0 170,38" fill="#f6b434"/><rect x="20" y="38" width="130" height="84" fill="#fff1c9" stroke="#f3c15a" stroke-width="5"/><g fill="#e9b44c"><rect x="36" y="48" width="22" height="64" rx="5"/><rect x="66" y="48" width="22" height="64" rx="5"/><rect x="96" y="48" width="22" height="64" rx="5"/><rect x="126" y="48" width="14" height="64" rx="5"/></g><rect x="0" y="122" width="170" height="20" rx="8" fill="#f6b434"/></svg>
+  <div class="stats">
+    <div class="box"><small>Kredit summasi</small><b>5<br>mln</b></div>
+    <span class="dan">dan</span>
+    <div class="box"><small>Gacha</small><b>300<br>mln</b></div>
+  </div>
+  <div style="height:70px"></div>
+  <a class="cta tg" href="#"><i><svg viewBox="0 0 24 24"><path d="M3 3l19 9-19 9 3-9z"/></svg></i><span>BUGUN ARIZA BERING</span></a>
+</div>
+
+<section>
+  <h2>Asosiy shartlar</h2>
+  <div class="grid">
+    <div class="card"><div class="ic">%</div><div><b>Yillik 11% stavka</b><p>Qulay kredit shartlari</p></div></div>
+    <div class="card"><div class="ic">₸</div><div><b>5–300 mln so‘m</b><p>Turli ehtiyojlar uchun</p></div></div>
+    <div class="card"><div class="ic">◔</div><div><b>Tez va oson</b><p>Ariza tez ko‘rib chiqiladi</p></div></div>
+    <div class="card"><div class="ic">✓</div><div><b>Ishonchli va xavfsiz</b><p>Ma’lumotlaringiz himoyalangan</p></div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Kredit olish 3 qadamda</h2>
+  <div class="steps">
+    <div class="step"><em>1</em><b>Ariza yuboring</b><p>Bir necha daqiqa vaqt oladi</p></div>
+    <div class="step"><em>2</em><b>Menejer bilan bog‘laning</b><p>Shartlar tushuntiriladi</p></div>
+    <div class="step"><em>3</em><b>Javobni oling</b><p>Natija bo‘yicha ma’lumot oling</p></div>
+  </div>
+  <a class="cta tg" href="#"><i><svg viewBox="0 0 24 24"><path d="M3 3l19 9-19 9 3-9z"/></svg></i><span>MENEJERGA YOZING</span></a>
+</section>
+
+<section>
+  <h2>Kredit kalkulyatori</h2>
+  <div class="calc">
+    <div class="row"><span>Summa</span><b id="vS"></b></div>
+    <input id="s" type="range" min="5" max="300" step="1" value="50" aria-label="Kredit summasi">
+    <div class="row"><span>Muddat</span><b id="vM"></b></div>
+    <input id="m" type="range" min="6" max="60" step="1" value="24" aria-label="Kredit muddati">
+    <div class="res"><div><small>Oylik to‘lov</small><b id="pay"></b></div><div style="text-align:right"><small>Umumiy foiz</small><b id="int"></b></div></div>
+    <p class="note">Hisob-kitob taxminiy (annuitet, 11% yillik). Aniq shartlarni menejer aytadi.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Talablar</h2>
+  <ul class="req">
+    <li>O‘zbekiston fuqarosi</li>
+    <li>18 yoshdan katta</li>
+    <li>Pasport yoki ID karta</li>
+    <li>Doimiy daromad manbai</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Ko‘p so‘raladigan savollar</h2>
+  <details><summary>Ariza qancha vaqtda ko‘riladi?</summary><p>Ariza tez ko‘rib chiqiladi. Menejer siz bilan Telegram orqali bog‘lanadi.</p></details>
+  <details><summary>Kredit uchun qanday hujjatlar kerak?</summary><p>Odatda pasport/ID karta va daromad haqida ma’lumot. To‘liq ro‘yxatni menejer aytadi.</p></details>
+  <details><summary>Kreditni muddatidan oldin yopish mumkinmi?</summary><p>Ha, bu haqda shartnoma shartlari bo‘yicha menejerdan so‘rang.</p></details>
+  <details><summary>Ma’lumotlarim xavfsizmi?</summary><p>Ha, shaxsiy ma’lumotlaringiz himoyalangan va uchinchi shaxslarga berilmaydi.</p></details>
+</section>
+
+<footer>© 2026 Imtiyozli kredit. Taklif ommaviy oferta emas; yakuniy shartlar menejer bilan kelishiladi.</footer>
+</div>
+
+<a class="fab tg" href="#"><svg viewBox="0 0 24 24"><path d="M21.5 3.5L2.7 10.8c-1.3.5-1.3 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.6.1.8.7.8.5 0 .7-.2 1-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.8c.3-1.2-.5-1.8-1.2-1.4zM8.5 13.2l9.700-6.100c.5-.3.9-.1.5.2l-7.900 7.100-.3 3.300z"/></svg>Telegram</a>
+
+<script>
+// ВСТАВЬТЕ СВОЮ ССЫЛКУ НА TELEGRAM:
+const TG_LINK = "https://t.me/your_username";
+document.querySelectorAll("a.tg").forEach(a=>{a.href=TG_LINK;a.target="_blank";a.rel="noopener"});
+
+const s=document.getElementById("s"),m=document.getElementById("m");
+const f=n=>Math.round(n).toLocaleString("ru-RU").replace(/\u00a0/g," ");
+function calc(){
+  const P=s.value*1e6,n=+m.value,r=0.11/12;
+  const pay=P*r/(1-Math.pow(1+r,-n));
+  document.getElementById("vS").textContent=s.value+" mln so‘m";
+  document.getElementById("vM").textContent=n+" oy";
+  document.getElementById("pay").textContent=f(pay)+" so‘m";
+  document.getElementById("int").textContent=f(pay*n-P)+" so‘m";
+}
+s.oninput=m.oninput=calc;calc();
+if(!matchMedia("(prefers-reduced-motion:reduce)").matches&&"IntersectionObserver" in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.15});
+  document.querySelectorAll("section").forEach(sec=>sec.querySelectorAll("h2,.card,.step,.calc,.req li,details").forEach((el,i)=>{el.classList.add("rv");el.style.setProperty("--d",(i%4)*.08+"s");io.observe(el)}));
+}else document.querySelectorAll(".rv").forEach(e=>e.classList.add("in"));
+</script>
+</body>
+</html>
